@@ -1,1 +1,1 @@
-New git for kirk.zhang
+New git
