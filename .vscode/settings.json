@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "data_file.h": "c",
+        "stdlib.h": "c",
+        "queue": "cpp",
+        "stack": "cpp"
+    }
+}

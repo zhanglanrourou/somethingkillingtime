@@ -1,0 +1,9 @@
+CMakeFiles
+*.cmake
+CMakeCache.txt
+*.exe
+*.ilk
+*.pdb
+Makefile
+*.manifest
+*.lib
