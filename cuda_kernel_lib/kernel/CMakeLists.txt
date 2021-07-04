@@ -18,7 +18,8 @@ if(MSVC)
     endforeach()    
 endif(MSVC)
 set(CMAKE_BUILD_TYPE Release)
-aux_source_directory(./src KERNEL_SRC)
+file(GLOB_RECURSE  KERNEL_SRC ./src/*.cu)
+
 include_directories(./inc)
 
 cuda_add_library(kernel_lib STATIC ${KERNEL_SRC})

@@ -57,7 +57,6 @@ using namespace cv;
 int32_t meanfilter_test()
 {
     int32_t ret;
-
     uint8_t *image = (uint8_t *)malloc(IMAGE_WIDTH * IMAGE_HEIGHT);
     RETURN_IF_NULL(image);
 
@@ -66,12 +65,12 @@ int32_t meanfilter_test()
 
     uint8_t *output_image = (uint8_t *)malloc(IMAGE_WIDTH * IMAGE_HEIGHT);
     RETURN_IF_NULL(output_image);
-#if 0
+
     mean_filter(image, output_image, IMAGE_WIDTH, IMAGE_HEIGHT, WINDOW);
 
     ret = save_data_file(GT_DATA_PATH, output_image, IMAGE_WIDTH * IMAGE_HEIGHT);
     RETURN_IF_FAILED(ret);
-#endif
+
     uint8_t *gt_image = (uint8_t *)malloc(IMAGE_WIDTH * IMAGE_HEIGHT);
     RETURN_IF_NULL(gt_image);
 
@@ -79,6 +78,5 @@ int32_t meanfilter_test()
 
     ret = save_data_file(OUT_DATA_PATH, output_image, IMAGE_WIDTH * IMAGE_HEIGHT);
     RETURN_IF_FAILED(ret);
-
     return 0;
 }
