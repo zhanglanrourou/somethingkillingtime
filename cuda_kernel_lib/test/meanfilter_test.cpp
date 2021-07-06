@@ -7,10 +7,11 @@
 #include "common.h"
 #include "opencv2/opencv.hpp"
 #include "cu_mean_filter.h"
+#include "data_path.h"
 
-#define INPUT_DATA_PATH "D:\\code\\cuda_kernel_lib\\test\\data\\meanfilter\\input.bin"
-#define GT_DATA_PATH "D:\\code\\cuda_kernel_lib\\test\\data\\meanfilter\\gt_output.bin"
-#define OUT_DATA_PATH "D:\\code\\cuda_kernel_lib\\test\\data\\meanfilter\\output.bin"
+#define INPUT_DATA_PATH "meanfilter/input.bin"
+#define GT_DATA_PATH "meanfilter/gt_output.bin"
+#define OUT_DATA_PATH "meanfilter/output.bin"
 #define IMAGE_WIDTH 512
 #define IMAGE_HEIGHT 512
 #define WINDOW 5

@@ -7,4 +7,4 @@ CMakeCache.txt
 Makefile
 *.manifest
 *.lib
-out/
+data_path.h

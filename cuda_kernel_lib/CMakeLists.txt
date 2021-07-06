@@ -10,21 +10,11 @@ include_directories(./kernel/inc
                     ./test
                     ../3rdparty/opencv)
 
-if(MSVC)     
-    # Use the static C library for all build types
-    foreach(var 
-        CMAKE_C_FLAGS CMAKE_C_FLAGS_DEBUG CMAKE_C_FLAGS_RELEASE
-        CMAKE_C_FLAGS_MINSIZEREL CMAKE_C_FLAGS_RELWITHDEBINFO
-        CMAKE_CXX_FLAGS CMAKE_CXX_FLAGS_DEBUG CMAKE_CXX_FLAGS_RELEASE
-        CMAKE_CXX_FLAGS_MINSIZEREL CMAKE_CXX_FLAGS_RELWITHDEBINFO
-      )
-      if(${var} MATCHES "/MD")
-        string(REGEX REPLACE "/MD" "/MT" ${var} "${${var}}")
-      endif()
-    endforeach()    
-endif(MSVC)
+add_compile_options(-MT)
 set(CMAKE_BUILD_TYPE Release)
-
+set(TEST_DATA_PATH ${CMAKE_CURRENT_SOURCE_DIR}/test/data)
+configure_file("./test/data_path.h.in"
+               "${CMAKE_CURRENT_SOURCE_DIR}/test/data_path.h")
 add_executable(kernel_test ${DIR_SRC})
 
 target_link_libraries(kernel_test kernel_lib)
